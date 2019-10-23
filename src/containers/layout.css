@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
+:root {
+  --background: rgba(0, 214, 170, .85);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+.logo{
+  padding: 5px 0;
+  display: flex;
+  font-weight: 500;
+  color: #fff;
+  align-items: center;
+}
+
+.logo div {
+  padding: 0 15px;
+}
+
+.content {
+  height: 200vh;
+  background-image: url(//unsplash.it/1000/1000);
+  background-color: #333;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+
+header {
+  /*background: var(--background);*/
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+header h1 {
+  margin: 5px;
+}
+
+.navToggle:checked ~ nav{
+  transform: scale(1, 1);
+}
+
+.navToggle{
+  display: none;
+}
+.navToggleLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+label{
+  cursor: pointer;
+}
+
+.navToggleLabel span,
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  transition: ease-in-out 400ms;
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.navToggleLabel span::before,
+.navToggleLabel span::after {
+  content: '';
+  position: absolute;
+}
+
+.navToggleLabel span::before{
+  bottom: 7px;
+}
+
+.navToggleLabel span::after{
+  top:  7px;
+}
+
+.navToggle:checked ~ .navToggleLabel span::before,
+.navToggle:checked ~ .navToggleLabel span::after {
+  content: none;
+}
+
+
+.navToggle:checked ~ .navToggleLabel span,
+.navToggle:checked ~ .navToggleLabel span::before {
+  content: "X";
+  transition: ease-in-out 400ms;
+  display: block;
+  height: 0;
+  font-size: 20px;
+  margin-top: -8px;
+  width: 0;
+  border-radius: 2px;
+  position: relative;
+  font-weight: 900;
+  color: white;
+}
+
+.navToggle:checked ~ .navToggleLabel span::before{
+  bottom: 0;
+}
+
+.navToggle:checked ~ .navToggleLabel span::after{
+  top:  0;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0.5em 1em;
+}
+
+nav a {
+  color: white;
+  font-size: 3vw;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+.navToggle:checked ~ nav a{
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+@media screen and (max-width: 800px) {
+  .logo {
+    display: block !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .navToggleLabel {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    all :unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    bottom: -.60em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform 250ms ease-in-out;
+  }
+
+  nav a:hover::before{
+    transform: scale(1,1);
+  }
+}
+
