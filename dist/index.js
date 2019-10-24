@@ -33,24 +33,55 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');\n\n:root {\n  --background: rgba(0, 214, 170, .85);\n}\n\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Work Sans', sans-serif;\n  font-weight: 400;\n}\n\n.layout_logo__37kff{\n  padding: 5px 0;\n  display: flex;\n  font-weight: 500;\n  color: #fff;\n  align-items: center;\n}\n\n.layout_logo__37kff div {\n  padding: 0 15px;\n}\n\n.layout_content__1inoe {\n  height: 200vh;\n  background-image: url(//unsplash.it/1000/1000);\n  background-color: #333;\n  background-blend-mode: multiply;\n  background-size: cover;\n  display: grid;\n  place-items: center;\n}\n\n\nheader {\n  /*background: var(--background);*/\n  text-align: center;\n  position: fixed;\n  z-index: 999;\n  width: 100%;\n}\n\nheader h1 {\n  margin: 5px;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav{\n  transform: scale(1, 1);\n}\n\n.layout_navToggle__1J_vf{\n  display: none;\n}\n.layout_navToggleLabel__1Z23_ {\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-left: 1em;\n  height: 100%;\n  display: flex;\n  align-items: center;\n}\n\nlabel{\n  cursor: pointer;\n}\n\n.layout_navToggleLabel__1Z23_ span,\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  transition: ease-in-out 400ms;\n  display: block;\n  background: white;\n  height: 2px;\n  width: 2em;\n  border-radius: 2px;\n  position: relative;\n}\n\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  content: '';\n  position: absolute;\n}\n\n.layout_navToggleLabel__1Z23_ span::before{\n  bottom: 7px;\n}\n\n.layout_navToggleLabel__1Z23_ span::after{\n  top:  7px;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after {\n  content: none;\n}\n\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before {\n  content: \"X\";\n  transition: ease-in-out 400ms;\n  display: block;\n  height: 0;\n  font-size: 20px;\n  margin-top: -8px;\n  width: 0;\n  border-radius: 2px;\n  position: relative;\n  font-weight: 900;\n  color: white;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before{\n  bottom: 0;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after{\n  top:  0;\n}\n\nnav {\n  position: absolute;\n  text-align: left;\n  top: 100%;\n  background: var(--background);\n  width: 100%;\n  transform: scale(1, 0);\n  transform-origin: top;\n  transition: transform 400ms ease-in-out;\n}\n\nnav ul {\n  display: flex;\n  justify-content: center;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\nnav li {\n  margin: 0.5em 1em;\n}\n\nnav a {\n  color: white;\n  font-size: 3vw;\n  text-decoration: none;\n  text-transform: uppercase;\n  opacity: 0;\n  transition: opacity 150ms ease-in-out;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav a{\n  opacity: 1;\n  transition: opacity 250ms ease-in-out 250ms;\n}\n\nnav a:hover {\n  color: #000;\n}\n\n@media screen and (max-width: 800px) {\n  .layout_logo__37kff {\n    display: block !important;\n  }\n}\n\n@media screen and (min-width: 800px) {\n  .layout_navToggleLabel__1Z23_ {\n    display: none;\n  }\n\n  header {\n    display: grid;\n    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;\n  }\n\n  .layout_logo__37kff {\n    grid-column: 2 / 3;\n  }\n\n  nav {\n    all :unset;\n    grid-column: 3 / 4;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n\n  nav ul {\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  nav li {\n    margin-left: 3em;\n    margin-bottom: 0;\n  }\n\n  nav a {\n    font-size: 1.2rem;\n    opacity: 1;\n    position: relative;\n  }\n\n  nav a::before{\n    content: '';\n    display: block;\n    height: 5px;\n    background: black;\n    position: absolute;\n    bottom: -.60em;\n    left: 0;\n    right: 0;\n    transform: scale(0, 1);\n    transition: transform 250ms ease-in-out;\n  }\n\n  nav a:hover::before{\n    transform: scale(1,1);\n  }\n}\n\n";
+var css = "@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');\n\n:root {\n  --background: rgba(0, 214, 170, .85);\n}\n\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n}\n\nbody {\n  margin: 0;\n}\n\n.layout_logo__37kff{\n  padding: 5px 0;\n  display: flex;\n  font-weight: 500;\n  color: #fff;\n  align-items: center;\n}\n\n.layout_logo__37kff div {\n  padding: 0 15px;\n}\n\n.layout_content__1inoe {\n  height: 200vh;\n  background-image: url(//unsplash.it/1000/1000);\n  background-color: #333;\n  background-blend-mode: multiply;\n  background-size: cover;\n  display: grid;\n  place-items: center;\n}\n\n\nheader {\n  /*background: var(--background);*/\n  text-align: center;\n  position: fixed;\n  z-index: 999;\n  width: 100%;\n}\n\nheader h1 {\n  margin: 5px;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav{\n  transform: scale(1, 1);\n}\n\n.layout_navToggle__1J_vf{\n  display: none;\n}\n.layout_navToggleLabel__1Z23_ {\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-left: 1em;\n  height: 100%;\n  display: flex;\n  align-items: center;\n}\n\nlabel{\n  cursor: pointer;\n}\n\n.layout_navToggleLabel__1Z23_ span,\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  transition: ease-in-out 400ms;\n  display: block;\n  background: white;\n  height: 2px;\n  width: 2em;\n  border-radius: 2px;\n  position: relative;\n}\n\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  content: '';\n  position: absolute;\n}\n\n.layout_navToggleLabel__1Z23_ span::before{\n  bottom: 7px;\n}\n\n.layout_navToggleLabel__1Z23_ span::after{\n  top:  7px;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after {\n  content: none;\n}\n\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before {\n  content: \"X\";\n  transition: ease-in-out 400ms;\n  display: block;\n  height: 0;\n  font-size: 20px;\n  margin-top: -8px;\n  width: 0;\n  border-radius: 2px;\n  position: relative;\n  font-weight: 900;\n  color: white;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before{\n  bottom: 0;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after{\n  top:  0;\n}\n\nnav {\n  position: absolute;\n  text-align: left;\n  top: 100%;\n  background: var(--background);\n  width: 100%;\n  transform: scale(1, 0);\n  transform-origin: top;\n  transition: transform 400ms ease-in-out;\n}\n\nnav ul {\n  display: flex;\n  justify-content: center;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\nnav li {\n  margin: 0.5em 1em;\n}\n\nnav a {\n  color: white;\n  font-size: 3vw;\n  text-decoration: none;\n  text-transform: uppercase;\n  opacity: 0;\n  transition: opacity 150ms ease-in-out;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav a{\n  opacity: 1;\n  transition: opacity 250ms ease-in-out 250ms;\n}\n\nnav a:hover {\n  color: #000;\n}\n\n@media screen and (max-width: 800px) {\n  .layout_logo__37kff {\n    display: block !important;\n  }\n}\n\n@media screen and (min-width: 800px) {\n  .layout_navToggleLabel__1Z23_ {\n    display: none;\n  }\n\n  header {\n    display: grid;\n    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;\n  }\n\n  .layout_logo__37kff {\n    grid-column: 2 / 3;\n  }\n\n  nav {\n    all :unset;\n    grid-column: 3 / 4;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n\n  nav ul {\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  nav li {\n    margin-left: 3em;\n    margin-bottom: 0;\n  }\n\n  nav a {\n    font-size: 1.2rem;\n    opacity: 1;\n    position: relative;\n  }\n\n  nav a::before{\n    content: '';\n    display: block;\n    height: 5px;\n    background: black;\n    position: absolute;\n    bottom: -.60em;\n    left: 0;\n    right: 0;\n    transform: scale(0, 1);\n    transition: transform 250ms ease-in-out;\n  }\n\n  nav a:hover::before{\n    transform: scale(1,1);\n  }\n}\n\n";
 var layout = { "logo": "layout_logo__37kff", "content": "layout_content__1inoe", "navToggle": "layout_navToggle__1J_vf", "navToggleLabel": "layout_navToggleLabel__1Z23_" };
 styleInject(css);
 
+function mobilecheck() {
+  var check = false;
+  (function (a) {
+    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true;
+  })(navigator.userAgent || navigator.vendor || window.opera);
+  return check;
+}
+
 var Items = function Items(props) {
+  var changeColor = function changeColor(e) {
+    if (!mobilecheck()) {
+      e.target.style.color = props.hoverColor;
+    }
+  };
+
+  var defaultColor = function defaultColor(e) {
+    if (!mobilecheck()) {
+      e.target.style.color = props.itemTextColor;
+    }
+  };
+
   return React__default.createElement(
     'li',
     null,
     React__default.createElement(
       'a',
-      { style: { color: 'blue' }, href: props.item.href },
+      {
+        onMouseEnter: function onMouseEnter(e) {
+          return changeColor(e);
+        },
+        onMouseOut: function onMouseOut(e) {
+          return defaultColor(e);
+        },
+        style: { color: props.itemTextColor },
+        href: props.item.href
+      },
       props.item.name
     )
   );
 };
 
 Items.propTypes = {
-  item: PropTypes.string.isRequired
+  item: PropTypes.object.isRequired,
+  itemTextColor: PropTypes.string,
+  hoverColor: PropTypes.string
 };
 
 function createCommonjsModule(fn, module) {
@@ -859,8 +890,8 @@ var Layout = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = Layout.__proto__ || Object.getPrototypeOf(Layout)).call.apply(_ref, [this].concat(args))), _this), _this.itemList = _this.props.items.map(function (item) {
-      return React__default.createElement(Items, { item: item });
+    return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = Layout.__proto__ || Object.getPrototypeOf(Layout)).call.apply(_ref, [this].concat(args))), _this), _this.itemList = _this.props.items.map(function (item, i) {
+      return React__default.createElement(Items, { key: i, itemTextColor: _this.props.itemTextColor, hoverColor: _this.props.hoverColor, item: item });
     }), _temp), possibleConstructorReturn(_this, _ret);
   }
 
@@ -880,8 +911,8 @@ var Layout = function (_Component) {
             className: 'lazyload' }),
           React__default.createElement(
             'div',
-            null,
-            'I Got Paid'
+            { style: { cursor: 'default', color: this.props.titleColor } },
+            this.props.title
           )
         ),
         React__default.createElement('input', { type: 'checkbox', id: 'nav-toggle', className: layout.navToggle }),
@@ -911,7 +942,11 @@ var Layout = function (_Component) {
 
 Layout.propTypes = {
   items: PropTypes.array,
-  color: PropTypes.string
+  color: PropTypes.string,
+  hoverColor: PropTypes.string,
+  titleColor: PropTypes.string,
+  title: PropTypes.string,
+  itemTextColor: PropTypes.string
 };
 
 var ExampleComponent = function (_Component) {
@@ -927,12 +962,20 @@ var ExampleComponent = function (_Component) {
     value: function render() {
       var _props = this.props,
           color = _props.color,
-          items = _props.items;
+          title = _props.title,
+          titleColor = _props.titleColor,
+          items = _props.items,
+          hoverColor = _props.hoverColor,
+          itemTextColor = _props.itemTextColor;
 
 
       return React__default.createElement(Layout, {
         color: color,
-        items: items
+        title: title,
+        hoverColor: hoverColor,
+        titleColor: titleColor,
+        items: items,
+        itemTextColor: itemTextColor
       });
     }
   }]);
@@ -941,6 +984,10 @@ var ExampleComponent = function (_Component) {
 
 ExampleComponent.propTypes = {
   color: PropTypes.string,
+  title: PropTypes.string,
+  titleColor: PropTypes.string,
+  hoverColor: PropTypes.string,
+  itemTextColor: PropTypes.string,
   items: PropTypes.array
 };
 

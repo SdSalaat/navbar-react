@@ -19,7 +19,11 @@ export default class App extends Component {
       },
       {
         href: '#',
-        name: 'Sign Up / Login'
+        name: 'Register'
+      },
+      {
+        href: '#',
+        name: 'Login'
       }
     ]
   };
@@ -29,7 +33,11 @@ export default class App extends Component {
       <div>
         <ExampleComponent
           items={this.state.items}
-          color={'red'}
+          color={'rgba(0, 214, 170, .85)'}
+          itemTextColor={'black'}
+          titleColor={'red'}
+          title={'I Got Glued'}
+          hoverColor={'blue'}
         />
       </div>
     )

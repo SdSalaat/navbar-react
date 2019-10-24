@@ -8,11 +8,15 @@ import PropTypes from 'prop-types'
 export default class Layout extends Component {
   static propTypes = {
     items: PropTypes.array,
-    color: PropTypes.string
+    color: PropTypes.string,
+    hoverColor: PropTypes.string,
+    titleColor: PropTypes.string,
+    title: PropTypes.string,
+    itemTextColor: PropTypes.string
   }
 
-  itemList = this.props.items.map(item => {
-    return <Items item={item} />
+  itemList = this.props.items.map((item, i) => {
+    return <Items key={i} itemTextColor={this.props.itemTextColor} hoverColor={this.props.hoverColor} item={item} />
   })
 
   render() {
@@ -24,7 +28,7 @@ export default class Layout extends Component {
             src={placeholderLogo}
             data-src='https://dummyimage.com/50x40/000/fff&text=logo'
             className='lazyload' />
-          <div>I Got Paid</div>
+          <div style={{cursor: 'default', color: this.props.titleColor}}>{this.props.title}</div>
         </div>
         <input type='checkbox' id='nav-toggle' className={layout.navToggle} />
         <nav>
