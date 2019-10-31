@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import layout from './layout.css'
 import Items from '../components/Items/items.jsx'
 import 'lazysizes'
@@ -21,25 +21,28 @@ export default class Layout extends Component {
 
   render() {
     return (
-      <header style={{background: this.props.color}}>
-        <div className={layout.logo}>
-          <img
-            alt='100%x200'
-            src={placeholderLogo}
-            data-src='https://dummyimage.com/50x40/000/fff&text=logo'
-            className='lazyload' />
-          <div style={{cursor: 'default', color: this.props.titleColor}}>{this.props.title}</div>
-        </div>
-        <input type='checkbox' id='nav-toggle' className={layout.navToggle} />
-        <nav>
-          <ul>
-            {this.itemList}
-          </ul>
-        </nav>
-        <label htmlFor='nav-toggle' className={layout.navToggleLabel}>
-          <span> </span>
-        </label>
-      </header>
+      <Fragment>
+        <header style={{background: this.props.color}}>
+          <div className={layout.logo}>
+            <img
+              alt='100%x200'
+              src={placeholderLogo}
+              data-src='https://dummyimage.com/50x40/000/fff&text=logo'
+              className='lazyload' />
+            <div style={{cursor: 'default', color: this.props.titleColor}}>{this.props.title}</div>
+          </div>
+          <input type='checkbox' id='nav-toggle' className={layout.navToggle} />
+          <nav>
+            <ul>
+              {this.itemList}
+            </ul>
+          </nav>
+          <label htmlFor='nav-toggle' className={layout.navToggleLabel}>
+            <span> </span>
+          </label>
+        </header>
+        <div className={layout['clear-fix']}> </div>
+      </Fragment>
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 function styleInject(css, ref) {
@@ -28,8 +28,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');\n\n:root {\n  --background: rgba(0, 214, 170, .85);\n}\n\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n}\n\nbody {\n  margin: 0;\n}\n\n.layout_logo__37kff{\n  padding: 5px 0;\n  display: flex;\n  font-weight: 500;\n  color: #fff;\n  align-items: center;\n}\n\n.layout_logo__37kff div {\n  padding: 0 15px;\n}\n\n.layout_content__1inoe {\n  height: 200vh;\n  background-image: url(//unsplash.it/1000/1000);\n  background-color: #333;\n  background-blend-mode: multiply;\n  background-size: cover;\n  display: grid;\n  place-items: center;\n}\n\n\nheader {\n  /*background: var(--background);*/\n  text-align: center;\n  position: fixed;\n  z-index: 999;\n  width: 100%;\n}\n\nheader h1 {\n  margin: 5px;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav{\n  transform: scale(1, 1);\n}\n\n.layout_navToggle__1J_vf{\n  display: none;\n}\n.layout_navToggleLabel__1Z23_ {\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-left: 1em;\n  height: 100%;\n  display: flex;\n  align-items: center;\n}\n\nlabel{\n  cursor: pointer;\n}\n\n.layout_navToggleLabel__1Z23_ span,\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  transition: ease-in-out 400ms;\n  display: block;\n  background: white;\n  height: 2px;\n  width: 2em;\n  border-radius: 2px;\n  position: relative;\n}\n\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  content: '';\n  position: absolute;\n}\n\n.layout_navToggleLabel__1Z23_ span::before{\n  bottom: 7px;\n}\n\n.layout_navToggleLabel__1Z23_ span::after{\n  top:  7px;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after {\n  content: none;\n}\n\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before {\n  content: \"X\";\n  transition: ease-in-out 400ms;\n  display: block;\n  height: 0;\n  font-size: 20px;\n  margin-top: -8px;\n  width: 0;\n  border-radius: 2px;\n  position: relative;\n  font-weight: 900;\n  color: white;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before{\n  bottom: 0;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after{\n  top:  0;\n}\n\nnav {\n  position: absolute;\n  text-align: left;\n  top: 100%;\n  background: var(--background);\n  width: 100%;\n  transform: scale(1, 0);\n  transform-origin: top;\n  transition: transform 400ms ease-in-out;\n}\n\nnav ul {\n  display: flex;\n  justify-content: center;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\nnav li {\n  margin: 0.5em 1em;\n}\n\nnav a {\n  color: white;\n  font-size: 3vw;\n  text-decoration: none;\n  text-transform: uppercase;\n  opacity: 0;\n  transition: opacity 150ms ease-in-out;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav a{\n  opacity: 1;\n  transition: opacity 250ms ease-in-out 250ms;\n}\n\nnav a:hover {\n  color: #000;\n}\n\n@media screen and (max-width: 800px) {\n  .layout_logo__37kff {\n    display: block !important;\n  }\n}\n\n@media screen and (min-width: 800px) {\n  .layout_navToggleLabel__1Z23_ {\n    display: none;\n  }\n\n  header {\n    display: grid;\n    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;\n  }\n\n  .layout_logo__37kff {\n    grid-column: 2 / 3;\n  }\n\n  nav {\n    all :unset;\n    grid-column: 3 / 4;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n\n  nav ul {\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  nav li {\n    margin-left: 3em;\n    margin-bottom: 0;\n  }\n\n  nav a {\n    font-size: 1.2rem;\n    opacity: 1;\n    position: relative;\n  }\n\n  nav a::before{\n    content: '';\n    display: block;\n    height: 5px;\n    background: black;\n    position: absolute;\n    bottom: -.60em;\n    left: 0;\n    right: 0;\n    transform: scale(0, 1);\n    transition: transform 250ms ease-in-out;\n  }\n\n  nav a:hover::before{\n    transform: scale(1,1);\n  }\n}\n\n";
-var layout = { "logo": "layout_logo__37kff", "content": "layout_content__1inoe", "navToggle": "layout_navToggle__1J_vf", "navToggleLabel": "layout_navToggleLabel__1Z23_" };
+var css = "@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');\n\n:root {\n  --background: rgba(0, 214, 170, .85);\n}\n\n*, *::before, *::after {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.layout_clear-fix__1cHIB{\n  padding-top: 50px;\n}\n\nbody {\n  margin: 0;\n}\n\n.layout_logo__37kff{\n  padding: 5px 0;\n  display: flex;\n  font-weight: 500;\n  color: #fff;\n  align-items: center;\n}\n\n.layout_logo__37kff div {\n  padding: 0 15px;\n}\n\n.layout_content__1inoe {\n  height: 200vh;\n  background-image: url(//unsplash.it/1000/1000);\n  background-color: #333;\n  background-blend-mode: multiply;\n  background-size: cover;\n  display: grid;\n  place-items: center;\n}\n\n\nheader {\n  /*background: var(--background);*/\n  text-align: center;\n  position: fixed;\n  z-index: 999;\n  width: 100%;\n}\n\nheader h1 {\n  margin: 5px;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav{\n  transform: scale(1, 1);\n}\n\n.layout_navToggle__1J_vf{\n  display: none;\n}\n.layout_navToggleLabel__1Z23_ {\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-left: 1em;\n  height: 100%;\n  display: flex;\n  align-items: center;\n}\n\nlabel{\n  cursor: pointer;\n}\n\n.layout_navToggleLabel__1Z23_ span,\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  transition: ease-in-out 400ms;\n  display: block;\n  background: white;\n  height: 2px;\n  width: 2em;\n  border-radius: 2px;\n  position: relative;\n}\n\n.layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggleLabel__1Z23_ span::after {\n  content: '';\n  position: absolute;\n}\n\n.layout_navToggleLabel__1Z23_ span::before{\n  bottom: 7px;\n}\n\n.layout_navToggleLabel__1Z23_ span::after{\n  top:  7px;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after {\n  content: none;\n}\n\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span,\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before {\n  content: \"X\";\n  transition: ease-in-out 400ms;\n  display: block;\n  height: 0;\n  font-size: 20px;\n  margin-top: -8px;\n  width: 0;\n  border-radius: 2px;\n  position: relative;\n  font-weight: 900;\n  color: white;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::before{\n  bottom: 0;\n}\n\n.layout_navToggle__1J_vf:checked ~ .layout_navToggleLabel__1Z23_ span::after{\n  top:  0;\n}\n\nnav {\n  position: absolute;\n  text-align: left;\n  top: 100%;\n  background: var(--background);\n  width: 100%;\n  transform: scale(1, 0);\n  transform-origin: top;\n  transition: transform 400ms ease-in-out;\n}\n\nnav ul {\n  display: flex;\n  justify-content: center;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\nnav li {\n  margin: 0.5em 1em;\n}\n\nnav a {\n  color: white;\n  font-size: 2vw;\n  text-decoration: none;\n  text-transform: uppercase;\n  opacity: 0;\n  transition: opacity 150ms ease-in-out;\n}\n\n.layout_navToggle__1J_vf:checked ~ nav a{\n  opacity: 1;\n  transition: opacity 250ms ease-in-out 250ms;\n}\n\nnav a:hover {\n  color: #000;\n}\n\n@media screen and (max-width: 800px) {\n  nav a {\n    font-size: 3vw;\n  }\n\n}\n@media screen and (max-width: 1300px) {\n  .layout_logo__37kff {\n    display: block !important;\n  }\n\n  .layout_clear-fix__1cHIB{\n    padding-top: 75px;\n  }\n\n}\n\n@media screen and (min-width: 1300px) {\n\n\n  .layout_navToggleLabel__1Z23_ {\n    display: none;\n  }\n\n  header {\n    display: grid;\n    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;\n  }\n\n  .layout_logo__37kff {\n    grid-column: 2 / 3;\n  }\n\n  nav {\n    all :unset;\n    grid-column: 3 / 4;\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n\n  nav ul {\n    display: flex;\n    justify-content: flex-end;\n  }\n\n  nav li {\n    margin-left: 3em;\n    margin-bottom: 0;\n  }\n\n  nav a {\n    font-size: 1.2rem;\n    opacity: 1;\n    position: relative;\n  }\n\n  nav a::before{\n    content: '';\n    display: block;\n    height: 5px;\n    background: black;\n    position: absolute;\n    bottom: -.60em;\n    left: 0;\n    right: 0;\n    transform: scale(0, 1);\n    transition: transform 250ms ease-in-out;\n  }\n\n  nav a:hover::before{\n    transform: scale(1,1);\n  }\n}\n\n";
+var layout = { "clear-fix": "layout_clear-fix__1cHIB", "logo": "layout_logo__37kff", "content": "layout_content__1inoe", "navToggle": "layout_navToggle__1J_vf", "navToggleLabel": "layout_navToggleLabel__1Z23_" };
 styleInject(css);
 
 function mobilecheck() {
@@ -894,40 +894,49 @@ var Layout = function (_Component) {
     key: 'render',
     value: function render() {
       return React.createElement(
-        'header',
-        { style: { background: this.props.color } },
+        Fragment,
+        null,
         React.createElement(
-          'div',
-          { className: layout.logo },
-          React.createElement('img', {
-            alt: '100%x200',
-            src: placeholderLogo,
-            'data-src': 'https://dummyimage.com/50x40/000/fff&text=logo',
-            className: 'lazyload' }),
+          'header',
+          { style: { background: this.props.color } },
           React.createElement(
             'div',
-            { style: { cursor: 'default', color: this.props.titleColor } },
-            this.props.title
+            { className: layout.logo },
+            React.createElement('img', {
+              alt: '100%x200',
+              src: placeholderLogo,
+              'data-src': 'https://dummyimage.com/50x40/000/fff&text=logo',
+              className: 'lazyload' }),
+            React.createElement(
+              'div',
+              { style: { cursor: 'default', color: this.props.titleColor } },
+              this.props.title
+            )
+          ),
+          React.createElement('input', { type: 'checkbox', id: 'nav-toggle', className: layout.navToggle }),
+          React.createElement(
+            'nav',
+            null,
+            React.createElement(
+              'ul',
+              null,
+              this.itemList
+            )
+          ),
+          React.createElement(
+            'label',
+            { htmlFor: 'nav-toggle', className: layout.navToggleLabel },
+            React.createElement(
+              'span',
+              null,
+              ' '
+            )
           )
         ),
-        React.createElement('input', { type: 'checkbox', id: 'nav-toggle', className: layout.navToggle }),
         React.createElement(
-          'nav',
-          null,
-          React.createElement(
-            'ul',
-            null,
-            this.itemList
-          )
-        ),
-        React.createElement(
-          'label',
-          { htmlFor: 'nav-toggle', className: layout.navToggleLabel },
-          React.createElement(
-            'span',
-            null,
-            ' '
-          )
+          'div',
+          { className: layout['clear-fix'] },
+          ' '
         )
       );
     }
