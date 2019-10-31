@@ -29,7 +29,8 @@ class Example extends Component {
 |  Props         |     Type       | 
 | -------------  |:------------- |
 | items          | Array of Object  <b>{name: "Item 1", href: "#" }</b>       |
-| color          | string      | 
+| color          | string      |
+| logo           | image string 
 
 ## Utility Props
 
@@ -39,7 +40,6 @@ class Example extends Component {
 | titleColor     |color name
 | hoverColor     |color name
 | title          |string
-| logo           |image string
 
 
 ## Support this project

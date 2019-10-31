@@ -33,7 +33,7 @@ export default class App extends Component {
       <div>
         <Navbar
           items={this.state.items}
-          color={'rgba(0, 214, 170, .85)'}
+          color={'red'}
           itemTextColor={'#fff'}
           titleColor={'#fff'}
           title={'I Got Paid'}

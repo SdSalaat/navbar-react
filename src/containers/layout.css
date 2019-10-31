@@ -132,7 +132,6 @@ nav {
   position: absolute;
   text-align: left;
   top: 100%;
-  background: var(--background);
   width: 100%;
   transform: scale(1, 0);
   transform-origin: top;
