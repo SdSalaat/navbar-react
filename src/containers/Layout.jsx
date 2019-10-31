@@ -17,7 +17,7 @@ export default class Layout extends Component {
   }
 
   itemList = this.props.items.map((item, i) => {
-    return <Items key={i} itemTextColor={this.props.itemTextColor} hoverColor={this.props.hoverColor} item={item}/>
+    return <Items key={i} itemTextColor={this.props.itemTextColor} hoverColor={this.props.hoverColor} item={item} />
   })
 
   render() {
@@ -29,11 +29,11 @@ export default class Layout extends Component {
               alt='100%x200'
               src={placeholderLogo}
               data-src={this.props.logo}
-              className='lazyload'/>
+              className='lazyload' />
             <div style={{cursor: 'default', color: this.props.titleColor}}>{this.props.title}</div>
           </div>
-          <input type='checkbox' id='nav-toggle' className={layout.navToggle}/>
-          <nav>
+          <input type='checkbox' id='nav-toggle' className={layout.navToggle} />
+          <nav style={{background: this.props.color}}>
             <ul>
               {this.itemList}
             </ul>
