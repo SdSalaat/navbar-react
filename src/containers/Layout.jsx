@@ -9,6 +9,7 @@ export default class Layout extends Component {
   static propTypes = {
     items: PropTypes.array,
     color: PropTypes.string,
+    logo: PropTypes.string,
     hoverColor: PropTypes.string,
     titleColor: PropTypes.string,
     title: PropTypes.string,
@@ -16,7 +17,7 @@ export default class Layout extends Component {
   }
 
   itemList = this.props.items.map((item, i) => {
-    return <Items key={i} itemTextColor={this.props.itemTextColor} hoverColor={this.props.hoverColor} item={item} />
+    return <Items key={i} itemTextColor={this.props.itemTextColor} hoverColor={this.props.hoverColor} item={item}/>
   })
 
   render() {
@@ -27,11 +28,11 @@ export default class Layout extends Component {
             <img
               alt='100%x200'
               src={placeholderLogo}
-              data-src='https://dummyimage.com/50x40/000/fff&text=logo'
-              className='lazyload' />
+              data-src={this.props.logo}
+              className='lazyload'/>
             <div style={{cursor: 'default', color: this.props.titleColor}}>{this.props.title}</div>
           </div>
-          <input type='checkbox' id='nav-toggle' className={layout.navToggle} />
+          <input type='checkbox' id='nav-toggle' className={layout.navToggle}/>
           <nav>
             <ul>
               {this.itemList}

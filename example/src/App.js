@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import ExampleComponent from 'navbar-react'
+import Navbar from 'navbar-react'
 
 export default class App extends Component {
   state = {
@@ -31,13 +31,14 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <ExampleComponent
+        <Navbar
           items={this.state.items}
           color={'rgba(0, 214, 170, .85)'}
           itemTextColor={'#fff'}
           titleColor={'#fff'}
           title={'I Got Paid'}
           hoverColor={'#000'}
+          logo={'https://dummyimage.com/50x40/000/fff&text=logo'}
         />
 
         <h1>Some Heading</h1>

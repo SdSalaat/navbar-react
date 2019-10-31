@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 export default class ExampleComponent extends Component {
   static propTypes = {
     color: PropTypes.string,
+    logo: PropTypes.string,
     title: PropTypes.string,
     titleColor: PropTypes.string,
     hoverColor: PropTypes.string,
@@ -18,6 +19,7 @@ export default class ExampleComponent extends Component {
       title,
       titleColor,
       items,
+      logo,
       hoverColor,
       itemTextColor
     } = this.props
@@ -25,6 +27,7 @@ export default class ExampleComponent extends Component {
     return (
       <Layout
         color={color}
+        logo={logo}
         title={title}
         hoverColor={hoverColor}
         titleColor={titleColor}
